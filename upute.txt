@@ -1,0 +1,3 @@
+classification - odvojene scene
+data augmentation kao word embedding ili kao pomoc neuralcoref-u
+neuralcoref za clustere
