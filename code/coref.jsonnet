@@ -15,9 +15,10 @@
     },
     "max_span_width": 10
   },
-  "train_data_path": "/content/friends.train.scene_delim.conll",
-  "validation_data_path": "/content/friends.test.scene_delim.conll",
+  "train_data_path": "/content/full/1/file_full_train_1.conll",
+  "validation_data_path": "/content/full/1/file_full_valid_1.conll",
   "test_data_path": "/content/friends.test.scene_delim.conll",
+  "evaluate_on_test": 1.0,
   "model": {
     "type": "coref",
     "text_field_embedder": {
@@ -88,7 +89,7 @@
     }
   },
   "trainer": {
-    "num_epochs": 150,
+    "num_epochs": 100,
     "grad_norm": 5.0,
     "patience" : 10,
     "validation_metric": "+coref_f1",
