@@ -62,7 +62,6 @@ broad spectrum of topics we think that it might be useful to apply
 synonym-based augmentation on coreference resolution task in
 conversational text.
 
-Database {#sec:data}
 ========
 
 The data collection created by @chen-choi-2016-character consists of
@@ -75,10 +74,6 @@ Judy, that could appear in some other dialogue. Identifying and
 clustering such mentions might require cross-document coreference
 resolution.
 
-![Dialogue example with labeled mentions assigned to entities. Taken
-from
-<https://competitions.codalab.org/competitions/17310>](character-identification-diagram.png "fig:")
-[fig:figure1]
 
 The dataset follows the CoNLL 2012 Shared Task data format[^2]. The data
 we used consists of documents, each document is delimited and each
@@ -92,19 +87,6 @@ the scene number is 0 and the speaker is Chandler Bing. The entity of
 the mention in this example belongs to their neighbour, the character
 Ugly Naked Guy.
 
-[tab:wide-table]
-
-<span>lccllllcc</span> Document ID & Scene ID & Token ID & Word form &
-POS tag & Lemma & Speaker & Entity ID\
- & $0$ & $0$ & Ugly & JJ & ugly & &\
- & $0$ & $1$ & Naked & JJ & naked & &\
- & $0$ & $2$ & Guy & NNP & guy & &\
- & $0$ & $3$ & got & VBD & get & &\
- & $0$ & $4$ & a & DT & a & &\
- & $0$ & $5$ & Thighmaster & NN & thighmaster & &\
- & $0$ & $6$ & ! & . & ! & &\
-
-[tab:table1]
 
 Our Approach {#sec:approach}
 ============
@@ -167,11 +149,6 @@ in Table [tab:augmentation].
 
 [tab:augmentation]
 
-<span>ll</span> ORIG.& Sounds like a date to me.\
-AUGM.& Sound like a particular date to me.\
-& Speech sound like a engagement to me.\
-& Sounds comparable a engagement to me.\
-
 Lemmas that were excluded from the synonym replacement task are
 stopwords from Nltk[^6] (Natural language toolkit). Additionally, to
 assure that words that greatly affect our task of coreference resolution
@@ -226,45 +203,7 @@ testing the model trained on a specific training set (S - small, M -
 medium, F - full/complete).
 
 [tab:table2]
-
-<span>lccccccccc</span> & & <span>Precision</span> & & &
-<span>Recall</span> & & & <span>F1-score</span>\
-& S & M & F & S & M & F & S & M & F\
-TRAIN SET\
-original & 0.448 & 0.490 & 0. & 0.155 & 0.302 & & 0.178 & 0.283\
-synonym augmented & 0.502 & 0. & 0. & 0.335\
-VALIDATION SET\
-original & 0.339 & 0.331 & 0. & 0.281 & 0.242 & & 0.261 & 0.226\
-synonym augmented & 0. & 0. & 0.\
-TEST SET\
-
-original & 0.564 & 0.581 & 0.579 & 0.431 & 0.396 & 0.318 & **0.480** &
-**0.453** & 0.371\
-synonym augmented & 0.546 & 0.553 & 0.581 & 0.327 & 0.301 & 0.224 &
-0.395 & 0.356 & 0.285\
-
-[tab:results]
-
-<span>lccccccccc</span> & & S & & & M & & & F &\
-<span>Data</span> & <span>Precision</span> & <span>Recall</span> &
-<span>F1-score</span> & <span>Precision</span> & <span>Recall</span> &
-<span>F1-score</span> & <span>Precision</span> & <span>Recall</span> &
-<span>F1-score</span>\
-
-TRAIN SET\
-original & 0.448 & 0.155 & 0.178 & 0.490 & 0.302 & 0.283\
-synonym augmented & 0.502 & 0.335 & 0.\
-VALIDATION SET\
-original & 0.339 & 0.281 & 0.261 & 0.331 & 0.242 & 0.226\
-synonym augmented & 0. & 0. & 0.\
-TEST SET\
-
-original & 0.564 & 0.431 & **0.480** & 0.581 & 0.396 & **0.453** & 0.579
-& 0.318 & 0.371\
-synonym augmented & 0.546 & 0.327 & 0.395 & 0.553 & 0.301 & 0.356 &
-0.581 & 0.224 & 0.285\
-
-Analysis
+ Analysis
 --------
 
 As we were unable to perform testing on a large number of training
